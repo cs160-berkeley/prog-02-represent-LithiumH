@@ -13,6 +13,7 @@
     <string name="term">Term:</string>
     <string name="sitting_committee">Sitting Committee:</string>
     <string name="bills_passed">Bills Passed:</string>
+    <string name="default_zip">94720</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

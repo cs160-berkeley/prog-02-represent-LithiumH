@@ -1,20 +1,21 @@
 # PROG 02: Represent!
 
-Briefly describe your app here.
+This project uses both the watch and the phone to display useful data
+about the presidential race and the congressional race.
 
 ## Authors
 
-FirstName LastName ([your_email@berkeley.edu](mailto:your_email@berkeley.edu))
+Haojun Li([haojun.li@berkeley.edu](mailto:haojun.li@berkeley.edu))
 
 ## Demo Video
 
-See [your demo video title here] (https://link_to_your_video)
+See [DEMO] (https://youtu.be/vhXA5N6rnjo)
 
 ## Screenshots
 
-<img src="screenshots/main.png" height="400" alt="Screenshot"/>
+<img src="screenshots/screen1.png" height="400" alt="Screenshot"/>
+<img src="screenshots/screen2.png" height="400" alt="Screenshot"/>
+<img src="screenshots/screen3.png" height="400" alt="Screenshot"/>
+<img src="screenshots/screen4.png" height="400" alt="Screenshot"/>
+<img src="screenshots/screen5.png" height="400" alt="Screenshot"/>
 
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Any other support

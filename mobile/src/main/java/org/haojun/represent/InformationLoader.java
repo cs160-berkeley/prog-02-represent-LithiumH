@@ -42,7 +42,9 @@ public class InformationLoader {
 
     public static Map<String, String> getDetailedCandidateDummy(String name) {
         Map<String, String> result = new HashMap<>();
-        List<Map<String, String>> candidates = getCandidatesDummy(94720);
+        List<Map<String, String>> candidates = new ArrayList<>();
+        candidates.addAll(getCandidatesDummy(94720));
+        candidates.addAll(getCandidatesDummy(94000));
         for (Map<String, String> candidate : candidates) {
             if (name.equals(candidate.get("name"))) {
                 result = new HashMap<>(candidate);

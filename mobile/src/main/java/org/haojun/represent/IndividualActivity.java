@@ -9,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -39,6 +40,7 @@ public class IndividualActivity extends AppCompatActivity {
         CollapsingToolbarLayout toolbarLayout =
                 (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         toolbarLayout.setTitle(candidate.get("name"));
+        Log.d("T", String.format("Name: %s, Party: %s", candidate.get("name"), candidate.get("party")));
         int color =
                 candidate.get("party").equals("Democrat") ? ContextCompat.getColor(this, R.color.democratBlue)
                         : candidate.get("party").equals("Republican") ? ContextCompat.getColor(this, R.color.republicanRed)
