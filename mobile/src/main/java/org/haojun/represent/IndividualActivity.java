@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -35,14 +36,13 @@ public class IndividualActivity extends AppCompatActivity {
         }
         Map<String, String> candidate =
                 InformationLoader.getDetailedCandidate(extras.getString("name"));
-
         CollapsingToolbarLayout toolbarLayout =
                 (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         toolbarLayout.setTitle(candidate.get("name"));
         int color =
-                candidate.get("party").equals("Democrat") ? getResources().getColor(R.color.democratBlue)
-                        : candidate.get("party").equals("Republican") ? getResources().getColor(R.color.republicanRed)
-                        : getResources().getColor(R.color.independentGreen);
+                candidate.get("party").equals("Democrat") ? ContextCompat.getColor(this, R.color.democratBlue)
+                        : candidate.get("party").equals("Republican") ? ContextCompat.getColor(this, R.color.republicanRed)
+                        : ContextCompat.getColor(this, R.color.independentGreen);
         toolbarLayout.setExpandedTitleColor(color);
         toolbarLayout.setCollapsedTitleTextColor(color);
 

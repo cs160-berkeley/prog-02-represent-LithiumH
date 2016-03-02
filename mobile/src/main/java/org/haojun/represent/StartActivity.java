@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -32,10 +33,10 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String zipCodeString = zipCodeEntry.getText().toString();
-                int zipCode = Integer.parseInt(zipCodeString.equals("") ? "94720"
-                        : zipCodeString);
+                Log.d("T", String.format("Zip Code entry is : %s",zipCodeString));
+                int zipCode = Integer.parseInt(zipCodeString);
                 Intent intent = new Intent(getApplicationContext(), AllCandidatesActivity.class);
-                intent.putExtra("zip_code", zipCode);
+                intent.putExtra("zipCode", zipCode);
                 startActivity(intent);
             }
         });
@@ -43,11 +44,11 @@ public class StartActivity extends AppCompatActivity {
         locationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Spin
-                // Gather Location Data
-                // Load information
-                // Stop spin
-                // Start AllCandidateActivity
+                String zipCodeString = "94720";
+                int zipCode = Integer.parseInt(zipCodeString);
+                Intent intent = new Intent(getApplicationContext(), AllCandidatesActivity.class);
+                intent.putExtra("zipCode", zipCode);
+                startActivity(intent);
             }
         });
     }

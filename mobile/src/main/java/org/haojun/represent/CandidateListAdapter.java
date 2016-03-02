@@ -55,8 +55,8 @@ public class CandidateListAdapter extends ArrayAdapter<Map<String,String>> {
                         : context.getResources().getColor(R.color.independentGreen));
                 Drawable imgSrc = null;
                 try {
-                    URL thumb_u = new URL(candidate.get("picuri"));
-                    imgSrc= Drawable.createFromStream(thumb_u.openStream(), "src");
+                    URL profile = new URL(candidate.get("picuri"));
+                    imgSrc= Drawable.createFromStream(profile.openStream(), "src");
                 } catch (MalformedInputException e) {
                     e.printStackTrace();
                 } catch (IOException e) {
