@@ -5,22 +5,33 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="0dp"
+    android:background="@color/background"
     tools:context="org.haojun.represent.StartActivity"
     tools:deviceIds="wear">
 
-    <TextView
-        android:id="@+id/text"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_world"
-        app:layout_box="all" />
+        android:padding="5dp"
+        android:orientation="vertical"
+        app:layout_box="all">
+        <org.haojun.represent.XTextViewBold
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:paddingBottom="50dp"
+            android:id="@+id/title"
+            android:text="@string/app_name"/>
+        <org.haojun.represent.XTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:text="@string/enter_loc"/>
 
-    <TextView
-        android:id="@+id/clock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
-        android:textColor="@android:color/white"
-        app:layout_box="all" />
+    </LinearLayout>
 
 </android.support.wearable.view.BoxInsetLayout>

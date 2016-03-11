@@ -3,20 +3,47 @@
     package="org.haojun.represent">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartActivity">
+        <activity
+            android:name=".StartActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".IndividualActivity"
+            android:label="@string/title_activity_individual"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AllCandidatesActivity"
+            android:label="@string/title_activity_all_candidates"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <service
+            android:name=".MobileToWatchService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".MobileListenerService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.BIND_LISTENER" />
+            </intent-filter>
+        </service>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="47c0955eefc7c78f2ddc1a8b827d3e26f55d5f7d" />
     </application>
 
 </manifest>
