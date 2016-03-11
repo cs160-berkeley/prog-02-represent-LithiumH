@@ -35,4 +35,8 @@ captures/
 .DS_Store
 
 # Movie Files
-.mov
+*.mov
+
+# API Keys
+mobile/src/main/assets/keys.json
+

@@ -42,8 +42,9 @@
             <org.haojun.represent.XTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="5dp"
-                android:textSize="30sp"
+                android:paddingEnd="0dp"
+                android:paddingStart="5dp"
+                android:textSize="25sp"
                 android:gravity="center_horizontal|top"
                 android:textColor="@color/candidateDetail"
                 android:id="@+id/romney"/>
@@ -63,8 +64,9 @@
             <org.haojun.represent.XTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="5dp"
-                android:textSize="30sp"
+                android:paddingEnd="5dp"
+                android:paddingStart="0dp"
+                android:textSize="25sp"
                 android:gravity="center_horizontal|top"
                 android:textColor="@color/candidateDetail"
                 android:id="@+id/obama"/>

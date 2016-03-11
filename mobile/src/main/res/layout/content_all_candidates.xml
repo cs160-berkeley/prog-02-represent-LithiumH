@@ -27,6 +27,6 @@
         android:layout_height="match_parent"
         android:id="@+id/candidateList"
         android:divider="@android:color/transparent"
-        android:dividerHeight="10sp"/>
+        android:dividerHeight="15sp"/>
 
 </LinearLayout>

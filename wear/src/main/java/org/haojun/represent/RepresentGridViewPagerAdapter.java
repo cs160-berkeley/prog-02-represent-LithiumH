@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.wearable.view.FragmentGridPagerAdapter;
-import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -26,7 +25,6 @@ public class RepresentGridViewPagerAdapter extends FragmentGridPagerAdapter {
                 _fragments.get(0).add(fragment);
             } else {
                 for (String key : bundle.keySet()) {
-                    Log.d("T", String.format("bundle contains %s", key));
                 }
                 Fragment fragment = VoteFragment.newInstance(bundle.getString("state"),
                         bundle.getString("county"), bundle.getString("obama"),

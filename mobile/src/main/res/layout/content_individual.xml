@@ -14,24 +14,26 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:paddingBottom="30dp"
             android:orientation="vertical">
             <org.haojun.represent.XTextViewBold
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/candidateDetail"
-                android:paddingStart="10dp"
+                android:paddingStart="20dp"
                 android:paddingEnd="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
                 android:textSize="15sp"
                 android:id="@+id/candidateEmail"/>
             <org.haojun.represent.XTextViewBold
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:paddingEnd="20dp"
                 android:textSize="15sp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
                 android:textColor="@color/candidateDetail"
                 android:id="@+id/candidateWebsite"/>
         </LinearLayout>
@@ -43,27 +45,30 @@
         <org.haojun.represent.XTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:id="@+id/term"/>
-        <org.haojun.represent.XTextView
+        <org.haojun.represent.XTextViewBold
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:text="@string/sitting_committee"/>
-        <org.haojun.represent.XTextViewBold
+        <org.haojun.represent.XTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:id="@+id/committee"/>
-        <org.haojun.represent.XTextView
+        <org.haojun.represent.XTextViewBold
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:text="@string/bills_passed"/>
-        <org.haojun.represent.XTextViewBold
+        <org.haojun.represent.XTextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:id="@+id/bills"/>
 
     </LinearLayout>

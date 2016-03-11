@@ -36,25 +36,32 @@ public class MobileToWatchService extends Service implements
     @Override
     public int onStartCommand(Intent intent, int flag, int intentId) {
         ArrayList<Bundle> bundles = intent.getParcelableArrayListExtra("org.haojun.represent.BUNDLES");
-        Log.d("T", String.format("picture array from bundle length: %d", bundles.get(0).getByteArray("pic").length));
         if (bundles != null) {
             ArrayList<DataMap> dataMaps = DataMap.arrayListFromBundleArrayList(bundles);
+            Log.d("T", String.format("datamaps size is %d", dataMaps.size()));
             for (DataMap dataMap : dataMaps) {
-                if (dataMap.getString("id").equals("candidate")) {
-                    Log.d("T", String.format("Each candidate's pic length: %d", dataMap.getByteArray("pic").length));
-//                    Asset asset = Asset.createFromBytes(dataMap.getByteArray("pic"));
-//                    dataMap.remove("pic");
-//                    dataMap.putAsset("pic", asset);
-                }
                 dataMap.putLong("time", (new java.util.Date()).getTime());
             }
             PutDataMapRequest dataMapRequest = PutDataMapRequest.create("/info");
             dataMapRequest.getDataMap()
                     .putDataMapArrayList("org.haojun.represent.DATAMAPS", dataMaps);
             Wearable.DataApi.putDataItem(mApiClient, dataMapRequest.asPutDataRequest());
+        } else {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    NodeApi.GetConnectedNodesResult result =
+                            Wearable.NodeApi.getConnectedNodes(mApiClient).await();
+                    for (Node node : result.getNodes()) {
+                        Wearable.MessageApi.sendMessage(mApiClient, node.getId(), "/reset",
+                                new byte[0]);
+                    }
+                }
+            }).start();
         }
-        return START_STICKY;
+        return START_NOT_STICKY;
     }
+
 
     @Override
     public IBinder onBind(Intent intent) {

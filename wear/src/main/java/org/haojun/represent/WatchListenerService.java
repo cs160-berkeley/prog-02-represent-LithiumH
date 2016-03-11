@@ -10,6 +10,8 @@ import com.google.android.gms.wearable.DataEvent;
 import com.google.android.gms.wearable.DataEventBuffer;
 import com.google.android.gms.wearable.DataMap;
 import com.google.android.gms.wearable.DataMapItem;
+import com.google.android.gms.wearable.MessageApi;
+import com.google.android.gms.wearable.MessageEvent;
 import com.google.android.gms.wearable.WearableListenerService;
 
 import java.util.ArrayList;
@@ -17,7 +19,8 @@ import java.util.ArrayList;
 /** This is a service running on the back ground to receive all the data from the mobile
  *
  */
-public class WatchListenerService extends WearableListenerService {
+public class WatchListenerService extends WearableListenerService
+        implements MessageApi.MessageListener{
 
     @Override
     public void onDataChanged(DataEventBuffer dataEvents) {
@@ -37,6 +40,17 @@ public class WatchListenerService extends WearableListenerService {
                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(mainIntent);
             }
+        }
+    }
+
+    @Override
+    public void onMessageReceived(MessageEvent messageEvent) {
+        super.onMessageReceived(messageEvent);
+        Log.d("Listener", "message received");
+        if (messageEvent.getPath().equals("/reset")) {
+            Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         }
     }
 }

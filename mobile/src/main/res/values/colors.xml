@@ -7,6 +7,6 @@
     <color name="democratBlue">#2F80ED</color>
     <color name="republicanRed">#FF5B5B</color>
     <color name="independentGreen">#27AE60</color>
-    <color name="candidateText">#dfdfdf</color>
+    <color name="candidateText">#ffffff</color>
     <color name="candidateDetail">#222222</color>
 </resources>
