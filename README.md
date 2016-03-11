@@ -29,3 +29,5 @@ Watch Interfaces:
 I actually changed the icon because the old icon is actually Sunlight Fundation's
 Congress iOS app. I don't wanna be sued. Instead, I used an icon by CC license.
 [Congress by Martha Ormiston from the Noun Project](https://thenounproject.com/term/congress/12741/)
+
+Also, I did not push the API keys to the repo. So if you recompile the code and try to run it it wouldn't work because the API keys file is not found.
