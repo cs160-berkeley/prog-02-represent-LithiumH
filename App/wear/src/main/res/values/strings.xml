@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Represent!</string>
+    <string name="enter_loc">Please enter your location on your phone</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="hello_square">Hello Square World!</string>
+    <string name="vote2012">2012 Presidential Election</string>
+    <string name="obama">Obama:</string>
+    <string name="romney">Romney:</string>
+
+</resources>
